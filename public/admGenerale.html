@@ -1,0 +1,261 @@
+<html>
+    <head>
+        <title>My Company - administratore</title>
+    </head>
+
+  <style type="text/css">
+      
+    body{
+        background-image: radial-gradient(circle, #ffffff,#ffe6e6,#ffcccc);
+    }
+    #continut{
+            width: 100%;
+            height: auto;
+            margin: auto;
+            min-height: 100%;
+            position: relative;
+    }
+    #antet{
+        width: 100%;
+        height: 8%;
+        position: relative;
+        background-image: linear-gradient(to bottom right, #991f00,#cc0000, #ff471a,#ff4d4d);
+        box-shadow: 0 0 5px 0.1px hsla(0,0%,9%,.73);
+    }
+    #meniu{
+        margin-top:25px;
+            height: 84%;
+            width: 15%;
+            position: relative;
+            background-image: linear-gradient(to bottom right, #991f00,#cc0000, #ff471a,#ff4d4d);
+            box-shadow: 0 0 5px 0.1px hsla(0,0%,9%,.73);
+            float: left;
+        }
+    #info{
+        color:white;
+        font-size:20px;
+        font-weight:bold;
+        
+    }
+    #titlu{
+            position: absolute;
+             width: 650px;
+             height:200px;
+            /*margin: auto;*/
+            min-height: 100%;
+            float: left;
+            z-index: 2;
+        }
+    #detalii{
+            position: absolute;
+            z-index: 2;
+            right: 0;
+            width: 200px;
+            height: 90px;
+            padding-left: 10px;
+            padding-right: 10px;
+            text-align:center;
+            padding-top:10px;
+        }
+        #itemsContaner{
+            position:relative;
+            top:150px;
+            width:90%;
+            height:90%;
+            margin:13px;
+            
+        }
+        #item{
+            width:92.5%;
+            padding:10px;
+            font-size:21px;
+            background-image: radial-gradient(circle,#ff0000,#e60000,  #990000,#660000);
+            border-radius:8px;
+            box-shadow: 0 0 5px 0.1px hsla(0,0%,9%,.73);
+            cursor: pointer;
+            font-weight:400;
+            text-align:center;
+            margin-top:30px;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+            
+        }
+        #context{
+            position:absolute;
+            width:83%;
+            height:85%;
+            margin-left:17%;
+            margin-top:1.3%;
+        }
+        #footer{
+            position: absolute;
+            top:90%;
+            width: 100%;
+            height: 5%;
+            margin-top:40px;
+            padding: 3px;
+            text-align: center;
+            font-family: Arial,serif;
+            z-index: 9;
+            font-size: 12px;
+            background: transparent;
+            /*color:#990000;*/
+        }
+table, td, th {  
+  border: 2px solid #cc0000;
+  text-align: center;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td {
+  padding: 15px;
+  font-size:18px;
+}
+th{
+    padding: 15px;
+    color:black;
+    font-size:20px;
+    font-weight:bold;
+}
+    </style>
+    <body>
+        <div id="container">
+            <div id="continut">
+                <div id="antet">
+                    
+                    <div id="titlu"></div>
+                    <div id="detalii">
+                        <span id="info">Profil Administrator <br/> Pitis Petruta Maria</span>
+                    </div>
+                </div>
+                <div id="meniu">
+                    <div id="itemsContaner">
+                        <div id="item">
+                            <a class="meniuA" href="ajutorJoc.html">
+                                        <font style="vertical-align: inherit;">Detalii generale utilizatori </font>
+                                    </a>
+                        </div>
+                        <div id="item">
+                            <a class="meniuA" href="ajutorJoc.html">
+                                        <font style="vertical-align: inherit;">Detalii provenienta utilizatori </font>
+                                    </a>
+                        </div>
+                        <div id="item">
+                            <a class="meniuA" href="ajutorJoc.html">
+                                        <font style="vertical-align: inherit;">Detalii progres utilizatori </font>
+                                    </a>
+                        </div>
+                        <div id="item">
+                            <a class="meniuA" href="ajutorJoc.html">
+                                        <font style="vertical-align: inherit;">Detalii nivel cunostine dobandite </font>
+                                    </a>
+                        </div>
+                    </div>
+                </div>
+                <div id="context" onclick="tabel()">
+                   <table>
+                       <thead>
+                           <tr>
+                            <th>Username</th>
+                            <th>Tara</th>
+                            <th>Email</th>
+                            <th>Parola</th>
+                            <th>Gen</th>
+                            <th>Bani</th>
+                            <th>Energie</th>
+                            <th>Nivel</th>
+                          </tr>
+                       </thead>
+                       
+                      <tbody id="tableBody">
+                       
+                      </tbody>
+                      
+                      <tfoot>
+                        <tr>
+                            <td colspan="8">Număr persoane: </td>
+                        </tr>
+            </tfoot>
+                    </table>
+                </div>
+                
+                <div id="footer">
+                      <br/> <br/>
+                       <b> My Company</b> <br/> 
+                        Pitis Petruta Maria - grupa 1066/2019
+                </div>
+            </div>
+        </div>
+        
+        <script  src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script type="text/javascript">
+        /*global axios*/
+        const SERVER='https://studcompany-maria400.c9users.io' 
+        /*global localStorage*/
+     
+        var tBody = document.getElementById("tableBody");
+        
+        function tabel(){
+             axios.get(SERVER+"/utilizatori").then(function (response) {
+                 console.log(response.data.length);
+                 response.data.forEach(function(item, index, array) {
+                    console.log(item, index);
+                    
+                    var tRow = document.createElement("tr");
+                 
+                 var cUsername = document.createElement("td");
+                 cUsername.innerHTML = item.username;
+                 
+                 var cTara = document.createElement("td");
+                 cTara.innerHTML = item.tara;
+                 
+                 var cEmail = document.createElement("td");
+                 cEmail.innerHTML = item.email;
+                 
+                 var cParola = document.createElement("td");
+                 cParola.innerHTML = item.parola;
+                 
+                 var cGen = document.createElement("td");
+                 cGen.innerHTML = item.gen;
+                 
+                 var cBani = document.createElement("td");
+                 cBani.innerHTML = item.bani;
+                 
+                 var cEnergie = document.createElement("td");
+                 cEnergie.innerHTML = item.energie;
+                 
+                 var cNivel = document.createElement("td");
+                 cNivel.innerHTML = item.nivel;
+                
+                tRow.appendChild(cUsername);
+                tRow.appendChild(cTara);
+                tRow.appendChild(cEmail);
+                tRow.appendChild(cParola);
+                tRow.appendChild(cGen);
+                tRow.appendChild(cBani);
+                tRow.appendChild(cEnergie);
+                tRow.appendChild(cNivel);
+                
+                
+                tBody.appendChild(tRow);
+                });
+                 
+                 
+                document.getElementsByTagName("tfoot")[0].childNodes[1].childNodes[1].innerHTML =
+                    "Număr persoane: " +response.data.length;
+             }).catch(function (err) {
+                alert(err.message );
+            });
+            
+           
+        }
+        
+        </script>
+    </body>
+</html>

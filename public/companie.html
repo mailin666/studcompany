@@ -1,0 +1,520 @@
+<html>
+    <head>
+        
+    </head>
+    <style type="text/css">
+        body{
+            background-color:black;
+            height: 100%;
+            min-width: 100%;
+            margin: 0;
+            padding: 0;
+            display: block;
+        }
+        div{
+            display: block;
+        }
+        #container{
+        background: url("fundaluri/birouRosu.jpg"),50% no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        min-width: 1100px;
+        min-height: 100%;
+    }
+        
+        #continut{
+            width: 1300px;
+            height: auto;
+            margin: auto;
+            min-height: 100%;
+            position: relative;
+        }
+        
+        #antet{
+            width: 100%;
+            height: 160px;
+            position: relative;
+        }
+        
+        #meniu{
+            height: 46px;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+        #context{
+            /*background: url(image/backgrounds/s1/site.png),50% no-repeat;*/
+            /*background-attachment: fixed;*/
+            /*background-size: cover;*/
+            z-index: 10;
+            margin-top:5px;
+            padding-bottom: 95px;
+        }
+        #footer{
+            position: absolute;
+            width: auto;
+            height: 87px;
+            padding: 3px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-family: Arial,serif;
+            z-index: 9;
+            font-size: 14px;
+            background: transparent;
+            color:white;
+        }
+
+
+        #titlu{
+             width: 650px;
+            /*margin: auto;*/
+            min-height: 100%;
+            float: left;
+        }
+        #detalii{
+            position: absolute;
+            z-index: 2;
+            top: -20px;
+            right: 0;
+            width: 320px;
+            height: 150px;
+            padding-top: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+       
+        #containerDetalii{
+            background-color: #fff;
+            box-shadow: 0 0 5px 0.1px hsla(0,0%,9%,.73);
+            height: 100%;
+            position: relative;
+        }
+        #nume{
+            
+            width: 100%;
+            position: relative;
+            color: white;
+        }
+        #chenarNume{
+            position:relative;
+            margin-top:10px;
+            width: 70%;
+            height:40px;
+            border:1px solid #cc0000;
+            box-shadow: 1px 1px 2px 0 rgba(64,137,162,.63);
+            background-image:linear-gradient(#ff0000, #b30000);
+           
+        }
+        #textNume{
+            position:relative;
+            font-size:20px;
+            font-weight:bold;
+            font-family:"Arial Black";
+            margin-top:5px;
+            color: white;
+        }
+        #clipDiv{
+            width:40px;
+            float: left;
+        }
+        #clip{
+            position:relative;
+            left:-8px;
+            top:-2px;
+            height:30px;
+            transform: rotate(-20deg);
+        }
+        #telefon{
+            height:30px;
+        }
+        #chenarTelefon{
+            position:relative;
+            width:45px;
+            top:-35px;
+            left:78%;
+        }
+        #numeCompanie{
+            position:relative;
+            top:-20px;
+            width: 100%;
+            padding:5px;
+            padding-left:15px;
+            font-size:18px;
+            
+        }
+        #domeniuCompanie{
+            position:relative;
+            top:-20px;
+            width: 100%;
+            padding:5px;
+            font-size:18px;
+            padding-left:15px;
+        }
+        #Atribute{
+            position:relative;
+            top:-20px;
+            width: 100%;
+        }
+        #containerBani{
+            position:relative;
+            margin-top:13px;
+            margin-left:23px;
+            width: 23%;
+            height:29px;
+            border:1px solid green;
+            box-shadow: 1px 1px 2px 0 rgba(64,137,162,.63);
+            background-image:linear-gradient(#ff0000, #990000);
+            border-radius:10%;
+            color: white;
+            
+        }
+        #bani{
+            height:120%;
+        }
+        #energy{
+            height:150%;
+        }
+        #baniDiv{
+            position:relative;
+            width:35px;
+            left:-15px;
+            top:-3px;
+            float: left;
+        }
+        #energyDiv{
+            position:relative;
+            width:35px;
+            left:-18px;
+            top:-11px;
+            float: left;
+        }
+        #suma{
+            position:relative;
+            font-size:18px;
+            font-weight:bold;
+            margin-top:5px;
+            left:-9px;
+        }
+        #containerEnergie{
+            position:relative;
+            margin-top:13px;
+            margin-left:23px;
+            width: 23%;
+            height:29px;
+            border:1px solid green;
+            box-shadow: 1px 1px 2px 0 rgba(64,137,162,.63);
+            background-image:linear-gradient(#ff0000, #990000);
+            border-radius:10%;
+            top:-44px;
+            left:37%;color: white;
+        }
+        #btnClose{
+            position:relative;
+            background-image:linear-gradient(#ff0000, #990000);
+            border-radius:50%;
+            width:4%;
+            padding:2px 8px 5px 8px;
+            font-weight:bold;
+            top:-75px;
+            left:92%;
+            border:1px solid green;
+            box-shadow: 1px 1px 2px 0 rgba(64,137,162,.63);
+            color: white;
+        }
+        #meniuButoane{
+            display: block;
+            position: relative;
+            height: 40px;
+            /*line-height: 45px;*/
+        }
+         
+        a{
+            text-decoration: none;
+            top:5px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            display: inline-block;
+            color: white;
+            height: 30px;
+            font-size: 23px;
+            line-height: 14px;
+            text-align: center;
+            position: relative;
+            vertical-align: bottom;
+            transition: background .3s,color .3s,height .3s;
+            margin-left:5px;
+            margin-right:3px;
+            cursor: pointer;
+        }
+        .home{
+            text-decoration: none;
+            top:5px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            padding: 8px 12px;
+            display: inline-block;
+            color: white;
+            height: 30px;
+            font-weight:bold;
+            line-height: 14px;
+            text-align: center;
+            position: relative;
+            margin-left: 3px;
+            margin-right: 6px;
+            vertical-align: bottom;
+            transition: background .3s,color .3s,height .3s;
+            background-image:linear-gradient(#e60000, #800000);
+            cursor: pointer;
+        }
+        
+        .icons{
+            height:30px;
+            background-color:white;
+            border-radius:50%;
+            padding:3px;
+        }
+        #poveste{
+            display: block;
+            background: #fff;
+            width: 100%;
+            min-height: 650px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 5px 0.1px hsla(0,0%,9%,.73);
+            background: url("fundaluri/start.jpg");
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Do not repeat the image */
+            background-size: cover; /* Resize the background image to cover the entire container */
+        }
+        #info{
+            width:200px;
+            background-color: hsla(0,0%,100%,.85);
+            border-radius: 10px;
+            border: 2px solid #fff;
+            box-sizing: content-box;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 30px;
+            padding: 5px 10px;
+            position: absolute;
+            text-align:center;
+        }
+        #containerAngajati{
+            position:absolute;
+            width:44px;
+            height:92%;
+            top:10%;
+            left:91%;
+            border-radius:50%;
+        }
+        #containerAngajati:hover {
+            box-shadow: 1px 1px 5px white, 0 0 50px #ffff66, 0 0 10px #e68a00;
+            background-color: hsla(0,0%,100%,.40);
+        }
+        #infoAngajati{
+            position:absolute;
+            width:100%;
+            height:100%;
+        }
+        
+        .textInfo{
+            background-color: hsla(0,0%,100%,.85);
+            border-radius: 10px;
+            box-sizing: content-box;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 30px;
+            padding: 5px 10px;
+            top:50%;
+            left:-100px;
+            position: absolute;
+            text-align:center;
+            box-shadow: 1px 1px 5px white, 0 0 50px #ffff66, 0 0 10px #e68a00;
+        }
+        
+        #containerContracte{
+          position:absolute;
+            width:100px;
+            height:10%;
+            top:79%;
+            left:53%;
+            border-radius:50%;
+        }
+        #containerContracte:hover {
+            box-shadow: 1px 1px 5px white, 0 0 50px #ffff66, 0 0 10px #e68a00;
+            background-color: hsla(0,0%,100%,.70);
+            border:1px solid yellow;
+        }
+          .textInfoContracte{
+            background-color: hsla(0,0%,100%,.85);
+            border-radius: 10px;
+            box-sizing: content-box;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 30px;
+            padding: 5px 10px;
+            top:70%;
+            left:120px;
+            position: absolute;
+            text-align:center;
+            box-shadow: 1px 1px 5px white, 0 0 50px #ffff66, 0 0 10px #e68a00;
+        }
+        
+        #containerJocuri{
+          position:absolute;
+            width:145px;
+            height:8.5%;
+            top:69.5%;
+            left:40%;
+            border-radius:50%;
+            transform: rotate(-9deg);
+        }
+        #containerJocuri:hover {
+            box-shadow: 1px 1px 5px white, 0 0 50px #ffff66, 0 0 10px #e68a00;
+            background-color: hsla(0,0%,100%,.70);
+            border:1px solid yellow;
+        }
+          .textInfoJocusi{
+            background-color: hsla(0,0%,100%,.85);
+            border-radius: 10px;
+            box-sizing: content-box;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 30px;
+            padding: 5px 10px;
+            top:-45px;
+            left:-60px;
+            position: absolute;
+            text-align:center;
+            box-shadow: 1px 1px 5px white, 0 0 50px #ffff66, 0 0 10px #e68a00;
+            transform: rotate(9deg);
+        }
+    </style>
+    <body>
+        <div id="container">
+            <div id="continut">
+                <div id="antet">
+                    <div id="titlu">
+                        
+                    </div>
+                    <div id="detalii">
+                     <div id="containerDetalii">
+                         <div id="nume">
+                             <div id="chenarNume">
+                                 <div id="clipDiv" >
+                                     <img id="clip"  src="icons/clip.png" >
+                                 </div>
+                                 <div id="textNume">
+                                     yo
+                                 </div>
+                             </div>
+                              <div id="chenarTelefon">
+                                 <img id="telefon"  src="icons/mobile.png" >
+                             </div>
+                         </div>
+                        <div id="numeCompanie">
+                            Companie:
+                        </div>
+                        <div id="domeniuCompanie">
+                            Domeniu:
+                        </div>
+                        <div id="Atribute">
+                            <div id="containerBani">
+                                <div id="baniDiv">
+                                    <img id="bani"  src="icons/moneda.png" >
+                                </div>
+                                <div id="suma">
+                                    3000
+                                </div>
+                            </div>
+                            <div id="containerEnergie">
+                                <div id="energyDiv">
+                                    <img id="energy"  src="icons/energy.png" >
+                                </div>
+                                <div id="suma">
+                                    3000
+                                </div>
+                            </div>
+                            <div id="btnClose">
+                                X
+                            </div>
+                        </div>
+                     </div>   
+                    </div>
+                </div>
+                <div id="meniu">
+                    <div id="meniuButoane">
+                        <div class="home">
+                         <img class="icons"  src="icons/home.png" >
+                         <a href="joc.html">Home</a>   
+                         </div>
+                         
+                        <div class="home">
+                         <img class="icons"  src="icons/play.png" >
+                         <a href="/scene/episoade">Episoade</a>   
+                        </div>
+                        
+                        <div class="home">
+                         <img class="icons"  src="icons/pers.png" >
+                         <a href="/scene/jocuri">Jocuri</a>
+                         </div>
+                        
+                        <div class="home">
+                         <img class="icons"  src="icons/company.png" >
+                         <a href="companie.html">Companie</a>
+                         </div>
+                         
+                         <div class="home">
+                         <img class="icons"  src="icons/shop.png" >
+                         <a href=" magazin.html">Magazin</a>
+                         </div>
+                         
+                         <div class="home">
+                         <img class="icons"  src="icons/help.png" >
+                         <a href="/scene/ajutor">Ajutor</a>          
+                         </div>
+                         
+                    </div>
+                </div>
+                <div id="context">
+                    <div id="poveste">
+                        <div id="info">
+                          <span>Primul stadiu al companiei:</span>  
+                        </div>
+                        
+                        <div id="containerAngajati">
+                            <div id="infoAngajati">
+                                <span class="textInfo">Angajati</span>
+                            </div>
+                        </div>
+                        
+                        <div id="containerContracte">
+                            <div id="infoAngajati">
+                                <span class="textInfoContracte">Contracte</span>
+                            </div>
+                        </div>
+                        
+                        <div id="containerJocuri">
+                            <div id="infoAngajati">
+                                <span class="textInfoJocusi">Jocuri</span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div id="footer">
+                         <br/> <br/>
+                       <b> My Company</b> <br/> 
+                        Pitis Petruta Maria - grupa 1066/2019
+                    </div>
+                </div> 
+            </div>
+        </div>
+        <script type="text/javascript">
+        var fundal=document.getElementById("container");
+        
+
+        </script>
+    </body>
+</html>

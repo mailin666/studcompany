@@ -1,0 +1,556 @@
+<html>
+    <head>
+        <title>MyCompany</title>
+        <style type="text/css">
+        
+            #jocJoc{
+                visibility:hidden;
+            }
+        
+            #absolvirea{
+                visibility:hidden;
+            }
+            
+            #planuri{
+                position:relative;
+                visibility:hidden;
+            }
+            #detalii{
+                position:relative;
+                visibility:hidden;
+            }
+            #aprobare{
+                position:relative;
+                visibility:hidden;
+            }
+            #TinaBye{
+                position:relative;
+                visibility:hidden;
+            }
+            body{
+             background-image:url("fundaluri/O.jpg");  
+            }
+            #profil{
+             position:fixed;   
+             top:0px;
+             left:60%;
+             width:330px;
+             height:160px;
+             background-color:white;
+             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+             border-left:1px solid #808080;
+             border-bottom :1px solid #808080;
+             border-right :1px solid #808080;
+            }
+            #nume{
+                position: relative;
+                top:5%;
+                width: 250px;
+                height:35px;
+                background-color:#2eb82e;
+                box-shadow: 1px 2px 10px grey;
+                text-align:center;
+                padding-top:5px;
+                font-size:23px;
+                font-weight:bold;
+                color:white;
+                font-family:"Arial Black";
+            }
+            #profilBtn{
+                position:fixed;
+                top:15%;
+            }
+            .btn{
+            border-radius:4px;
+            background-image: linear-gradient(#5cd65c,  #248f24);
+            border: none;
+            color:white;
+            font-size:14px;
+            padding:5px 10px;
+            font-weight:bold;
+            margin-right:10px;
+            margin-left:10px;
+            cursor: pointer;
+            }
+            .btn:hover {background-image:linear-gradient(#85e085, #2eb82e);}
+            
+            #close{
+            position:relative;
+            border-radius:50%;
+            border: none;
+            padding:6px 10px;
+            text-align: center;
+            font-size: 16px;
+            font-weight:bold;
+            cursor: pointer;
+            display: inline-block;
+            background-image:linear-gradient(#5cd65c,  #248f24);
+            color:white;
+            margin-left:140px;
+            }
+            #close:hover {background-image:linear-gradient(#85e085, #2eb82e);}
+
+            #numeCompanie{
+                position:relative;
+                top:14%;
+                left:3%;
+                font-size:16px;
+                font-family:"Arial Black";
+                color:#248f24;
+            }
+            
+            #bani{
+                position:relative;
+                top:23%;
+                left:6%;
+                width:80px;
+            }
+            #moneda{
+                width:35px;
+                height:35px;
+                position:relative;
+                top:-33px;
+                left:-10px;
+            }
+            #baniChenar{
+             position:relative;
+             background-image: linear-gradient(to right,  white , #00b300);
+              
+                padding-left:45%;
+                padding-top: 7%;
+                padding-bottom:7%;
+                border-radius:8%;
+                color:white;
+                font-size:17px;
+                font-weight:bold;
+            }
+            
+            #plic{
+                width:38px;
+                height:39px;
+                position:relative;
+                top:-34px;
+                left:-12px;
+            }
+            #msj{
+                position:relative;
+                top:-30px;
+                left:52%;
+                width:80px;
+            }
+            #msjChenar{
+                background-image: linear-gradient(to right,  white , #00b300);
+                padding-left:55%;
+                padding-top: 7%;
+                padding-bottom:7%;
+                border-radius:8%;
+                color:white;
+                font-size:17px;
+                font-weight:bold;
+            }
+            #telefon{
+                position:fixed;
+                top:1.5%;
+                left:74%;
+                height:30px;
+            }
+            
+            #plansa{
+                position:fixed;
+                top:20%;
+                left:20%;
+                width:58%;
+                height:70%;
+            }
+            #joc{
+                position:relative;
+                top:0%;
+                left:5%;
+                width:95%;
+                height:94%;
+                background-image: linear-gradient( #ffd9b3,  #805500);
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 1px 25px 0 rgba(0, 0, 0, 0.19);
+            }
+            #btnJoc{
+                position:relative;
+                top:0%;
+                left:6%;
+                height:6%;
+            }
+            .btnJoc{
+            border-radius:4px;
+            background-image: linear-gradient(#ffff00,  #ffd24d);
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            border: none;
+            color:white;
+            font-size:22px;
+            padding:6px 14px;
+            font-weight:bold;
+            margin-right:-10px;
+            cursor: pointer;
+            font-family:"Palatino Linotype";
+            margin-left:20px;
+            }
+            .btnJoc:hover {background-image:linear-gradient(#ffff00, #33cc33);}
+            #BtnStart{
+                background-image:linear-gradient(#ffff00, #33cc33);
+            }
+            #BtnStart:hover {background-image:linear-gradient(white, white);
+                            color: #2eb82e;
+                            box-shadow: 0 0 3px #ffff00;
+            }
+            
+            #footer{
+                position:fixed;
+                top:92.5%;
+                left:45%;
+                color:white;
+                text-align:center;
+                line-height: 1.8;
+                font-size:16px;
+            }
+            
+/*CADREA*/
+
+        #caracter{
+                position: fixed;
+                height:55%;
+                top:35%;
+                left:50%;
+            }
+        .raspunsuri{
+                position:fixed;
+                top:86.5%;
+                left:38%;
+                width:40%;
+                background: rgba(255, 255, 255, 0.5);
+                color:black;
+                font-size:16px;
+                font-weight: bold;
+                border-radius: 4px;
+                border:none;
+                padding:5px 15px;
+                text-align:left;
+                opacity:0.9;
+                font-family:"Lucida Sans Unicode";
+            }
+        .raspunsuri:hover {opacity: 1}
+            
+        #btn2{
+                position: fixed;
+                top:82.9%;
+            }
+        #btn3{
+                position: fixed;
+                top:79%;
+                border-top: 4px solid #2eb82e;
+            }
+            
+        #fundalJoc{
+            width:100%;
+            height:100%;
+        }    
+        
+        .replici{
+            position:fixed;
+                top:35%;
+                left:32%;
+                width:260px;
+                background-color:white;
+                padding: 15px;
+                border-radius: 8px;
+                border: 1px solid black;
+                /*box-shadow: 4px 10px 13px #888888;*/
+                font-family:"Lucida Sans Unicode";
+                box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        
+        .spate{
+            position:fixed;
+            background-image:url("icons/star.png");
+        }
+        
+/*MAGAZIN*/
+
+        #magazin{
+            visibility:hidden;
+        }
+
+        #titluM{
+            position:relative;
+            height:8%;
+            width:100%;
+            background-image:linear-gradient(white, #e6e6e6);
+            font-size:27px;
+            font-weight:bold;
+            color:#248f24;
+            font-family:"Arial Black", Gadget, sans-serif;
+            padding-top:12px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 1px 25px 0 rgba(0, 0, 0, 0.19);
+        }
+        
+        #vanzator{
+            position:fixed;
+            width:16.5%;
+            height:59%;
+            background-image:linear-gradient(white, #e6e6e6);
+        }
+        #caracterV{
+            height:60%;
+            position:fixed;
+            top:29.8%;
+            left:8%;
+        }
+        
+        #obiecte{
+            position:fixed;
+            top:30.5%;
+            left:39.4%;
+            height:59.5%;
+            width:38.6%;
+        }
+        
+                
+        .imgObj{
+            position:relative;
+            top:40px;
+            left:5%;
+            height:17%;
+            background-image:linear-gradient(#ffffff,  #e6e6e6);
+            border-radius:16px;
+            padding:7px 12px 14px 12px;
+            border: 2px solid white;
+            
+        
+    }  
+    .pretObj{
+        position:relative;
+        top:4.5%;
+        left:9%;
+        background-image: linear-gradient(to right,  #00e600 , #00b300);
+        width:55px;
+        color:white;
+        font-size:25;
+        font-weight:bold;
+        padding:3px;
+        padding-left:12px;
+        border-radius:8px;
+    }
+    #cent{
+        height:22px;
+    }
+        
+            .imgObj2{
+            position:relative;
+            top:40px;
+            left:15%;
+            height:17%;
+            background-image:linear-gradient(#ffffff,  #e6e6e6);
+            border-radius:16px;
+            padding:7px 12px 14px 12px;
+            border: 2px solid white;
+            
+        
+    }  
+    .pretObj2{
+        position:relative;
+        top:4.5%;
+        left:19%;
+        background-image: linear-gradient(to right,  #00e600 , #00b300);
+        width:55px;
+        color:white;
+        font-size:25;
+        font-weight:bold;
+        padding:3px;
+        padding-left:12px;
+        border-radius:8px;
+    }    
+        
+        
+        </style>
+    </head>
+    <body>
+        <div id="profil">
+            <div id="nume">
+                Tina
+            </div>
+            <img id="telefon" src="icons/mobile.png">
+            <div id="numeCompanie">
+                Compania: 
+            </div>
+            
+            <div id="bani">
+                <div id="baniChenar">
+                    200
+                </div>
+                 <img id="moneda" src="icons/moneda.png">
+            </div>
+            <div id="msj">
+                <div id="msjChenar">
+                     3
+                 </div>
+                 <img id="plic" src="icons/msj.png">
+            </div>
+            <div id="profilBtn">
+                <button class="btn">Profil</button>
+                <button  class="btn">Ajutor</button>
+                <button id="close">X</button>
+            </div>
+        </div>
+        
+        <div id="plansa">
+            <div id="btnJoc">
+                <button class="btnJoc" id="BtnStart">Start</button>
+                <button class="btnJoc">Apartamentul meu</button>
+                <button onclick="magazin()" class="btnJoc">Magazin</button>
+                <button onclick="joc()" class="btnJoc">Oras</button>
+                <button class="btnJoc">Caractere</button>
+                
+                
+            </div>
+            <div id="joc">
+              
+               <div id="magazin">
+                   
+                   <div id="titluM">
+                      &nbsp;&nbsp;  Librarie
+                   </div>
+                   <div id="vanzator">
+                       <img id="caracterV" src="caractere/secundare/vanzator.png" >
+                   </div>
+                   <div id="obiecte">
+                       <img class="imgObj" src="icons/bolt.png" >
+                       <div class="pretObj">
+                           1
+                           <img id="cent" src="icons/moneda.png" >
+                       </div>
+                       <br/>
+                       <img class="imgObj" src="icons/pen.png" >
+                       <div class="pretObj">
+                           5
+                           <img id="cent" src="icons/moneda.png" >
+                       </div>
+                       <br/>
+                       <img class="imgObj" src="icons/stic.png" >
+                       <div class="pretObj">
+                           35
+                           <img id="cent" src="icons/moneda.png" >
+                       </div>
+                       
+                       <br/>
+                   </div>
+                   
+                   <!--<div id="pen">-->
+                   <!--    <img id="stilou" src="icons/pen.png" >-->
+                   <!--</div>-->
+                   
+               </div>
+               
+               <div id="jocJoc">
+                    <img id="fundalJoc" src="fundaluri/scoala.jpeg" >
+                    
+                    <div id="absolvirea"> 
+                        <img id="caracter" src="caractere/Tiana/T_rade.png" >
+                        <button class="raspunsuri" id="btn1" onclick="a()"><span style="color: #33cc33">&nbsp;A.</span>&nbsp;&nbsp; In sfarsit ... si acum care e urmatorul pas?</button>
+                        <p class="replici">In sfarsit am terminat facultatea! Iti dai seama? Parca nu imi vine sa cred ...</p>
+                    </div>
+                    
+                    
+                    <div id="planuri">
+                    <img id="caracter" src="caractere/Tiana/T_zambet.png" >
+                    <button class="raspunsuri" id="btn1" onclick="b()"><span style="color: #33cc33">&nbsp;A.</span>&nbsp;&nbsp;  Sa imi deschid propria afacere.</button>
+                    <p class="replici">Imi doresc sa ma angajez in cadrul unei multinationale. Tu? La ce te-ai gandit?</p>
+                    </div>
+                    
+                    
+                    <div id="detalii">
+                    <img id="caracter" src="caractere/Tiana/R_neutru.png" >
+                    <button class="raspunsuri" id="btn1" onclick="c()"><span style="color: #33cc33">&nbsp;C.</span>&nbsp;&nbsp;  Mi-as dori sa infiintez o firma de consultanta.</button></br>
+                    <button class="raspunsuri" id="btn2" onclick="d()"><span style="color: #33cc33">&nbsp;B.</span>&nbsp;&nbsp;  Ma gandeam la o firma de contabilitate.</button></br>
+                    <button class="raspunsuri" id="btn3" onclick="e()"><span style="color: #33cc33">&nbsp;A.</span>&nbsp;&nbsp;  Ma gandeam la o firma de gestiune a bazelor de date.</button></br>
+                    <p class="replici">Asta da plan ambitios ... Si la ce te-ai gandit mai exact? </p>
+                    </div>
+                    
+                    <div id="aprobare">
+                    <img id="caracter" src="caractere/Tiana/T_face_ochiul.png" >
+                    <button  class="raspunsuri" id="btn1" onclick="f()"><span style="color: #33cc33">&nbsp;A.</span>&nbsp;&nbsp; Mersii!</button></br>
+                    <p class="replici">O sa iti fie foarte greu... dar iti tin pumnii sa reusesti!!! </p>
+                    </div>
+                    
+                    <div id="TinaBye">
+                    <img id="caracter" src="caractere/Tiana/T_rade.png" >
+                    <button  class="raspunsuri" id="btn1" onclick="f1()"><span style="color: #33cc33">&nbsp;A.</span>&nbsp;&nbsp; Desigur! Bye Bye !</button></br>
+                    <p class="replici">Atunci te las! Ne mai auzit la un telefon sa ma ti la curent cu ultimele noutati! Bye! </p>
+                    </div>
+                    
+                    
+                    <!--AICI AI RAMAS-->
+                    <!--<div id="iesireScoala">-->
+                    <!--    <img id="spate" src="icons/star.png" >-->
+                    <!--<button id="spate" onclick="g()"></button></br>-->
+                    <!--</div>-->
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div id="footer">
+            2019 | MY COMPANY<br/>
+            Realizat de catre Pitis Petruta Maria.
+        </div>
+        <script type="text/javascript" >
+        //variabile
+        var firma="";
+        
+        
+        //MENIU
+        function magazin(){
+            document.getElementById("jocJoc").style.visibility = "hidden";
+            document.getElementById("magazin").style.visibility = "visible";
+        }
+        
+        function joc(){
+            document.getElementById("jocJoc").style.visibility = "visible";
+            document.getElementById("magazin").style.visibility = "hidden";
+            document.getElementById("absolvirea").style.visibility = "visible";
+        }
+        
+        //cadru : absolvire
+            function a(){
+                document.getElementById("absolvirea").style.visibility = "hidden";
+                document.getElementById("planuri").style.visibility = "visible";
+            }
+        //cadrul:planuri
+            function b(){
+                document.getElementById("planuri").style.visibility = "hidden";
+                document.getElementById("detalii").style.visibility = "visible";
+            }
+        //cadru:detalii
+            function c(){
+                document.getElementById("detalii").style.visibility = "hidden";
+                document.getElementById("aprobare").style.visibility = "visible";
+                firma="Firma de consultanta";
+            } 
+            function d(){
+                document.getElementById("detalii").style.visibility = "hidden";
+                document.getElementById("aprobare").style.visibility = "visible";
+                firma="Firma de contabilitate";
+            } 
+            function e(){
+                document.getElementById("detalii").style.visibility = "hidden";
+                document.getElementById("aprobare").style.visibility = "visible";
+                firma="Firma de gestiune a bazelor de date";
+            }
+        //cadru:aprobabre
+            function f(){
+                document.getElementById("aprobare").style.visibility = "hidden";
+                document.getElementById("TinaBye").style.visibility = "visible";
+            }
+        //cadru:TinaBye
+            function f1(){
+                document.getElementById("TinaBye").style.visibility = "hidden";
+                document.getElementById("iesireScoala").style.visibility = "visible";
+            }
+        </script>
+    </body>
+</html>

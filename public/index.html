@@ -1,0 +1,524 @@
+<html>
+    <head>
+        <title>Joc</title>
+    </head>
+    <style type="text/css">
+    body{
+        background-color:black;
+    }
+    #part1{
+        position:relative;
+        visibility:visible;
+        padding:0px;
+        margin:0px;
+    }
+        #fundal{
+            position:relative;
+            margin:0px;
+            padding:0px;
+            left:-8px;
+            top:-8px;
+          width:100.9%;
+          height:100%;
+        }
+        #login{
+            position: fixed;
+            top:0px;
+            left: 50%;
+            margin-left:-280px;
+            padding: 10px;
+            background-image: linear-gradient(#00cc00,  #00b300);
+            border-radius:8px;
+        }
+        .textbox{
+            border-radius:8px;
+            height:25px;
+            padding:15px;
+            border: none;
+        }
+        select{
+            border-radius:8px;
+            padding:5px;
+            border: none;
+        }
+        #ok{
+            background-color:#009900;
+            color:white;
+            font-weight:bold;
+            border-radius:8px;
+            border: none;
+            padding:5px;
+        }
+        #ok:hover {background-image:linear-gradient(#00e600,  #008000);}
+        label{
+            color:white;
+            font-weight:bold;
+        }
+        #carcater1{
+            position: absolute;
+            top:24%;
+            left:56%;
+            height:600px;
+        }
+        #carcater2{
+            position: absolute;
+            top:24%;
+            left:65%;
+            height:600px;
+        }
+         #carcater3{
+            position: absolute;
+            top:24%;
+            left:44%;
+            height:600px;
+        }
+        #registrare{
+            position: absolute;
+            top:80%;
+            left:49.5%;
+            width:550px;
+            height:80px;
+            border-radius:8px;
+            background-image: linear-gradient(#00e600,   #009900);
+            border: none;
+            color:White;
+            font-size:32px;
+            font-weight:bold;
+            cursor: pointer;
+        }
+        #registrare:hover {background-image:linear-gradient(#1aff1a,  #00b300);}
+        
+        #notitaVerde{
+            position:absolute;
+            width:400px;
+            height:250px;
+            background-color:#00cc00;
+            top:20%;
+            left:12%;
+            transform: rotate(-10deg);
+            box-shadow: 5px 10px 15px #666666;
+            color: white;
+            font-family:Georgia;
+             font-size:16px;
+             text-align:center;
+        }
+        
+        #notitaAlba{
+             position:absolute;
+             width:430px;
+             height:150px;
+             background-color:rgb(245, 245, 245);
+             top:21.5%;
+             left:10.7%;
+             transform: rotate(-10deg);
+             box-shadow: 3px 3px 7px #808080;
+             color:#009900;
+             text-align:center;
+             font-size:18px;
+             font-family:Georgia;
+             line-height: 1.6;
+        }
+        
+/*BINE AI VENIT*/
+
+        #BunVenit{
+            position:fixed;
+            visibility:hidden;
+            border-radius:10px;
+            background-color: white;
+            display:block;
+            top:22%;
+            left:30%;
+            padding:20 0 20 0 ;
+        }
+        #poza{
+            width:700px;
+            height: 300px;
+        }
+        #titlu2{
+            color: #00b300;
+            padding-left:200px;
+            font-size:25px;
+        }
+        #descriere{
+            width:660px;
+            padding-left:20px;
+            padding-right:20px;
+            font-size:18px;
+            text-align: center;
+        }
+        #btnIncepe{
+            border-radius:8px;
+            background-image: linear-gradient(#00e600,   #009900);
+            border: none;
+            color:White;
+            cursor: pointer;
+            box-shadow: 2px 2px 5px #00cc00;
+            font-size:14px;
+            font-weight:bold;
+            padding:10px;
+            margin-left:300px;
+        }
+        
+/*FORMULAR*/
+
+        #formular{
+                position:fixed;
+                visibility:hidden;
+            padding:30px;
+            border-radius:10px;
+            background-image: linear-gradient(#f2f2f2,  #80ff80);
+            display:block;
+            top:22%;
+            left:35%;
+            font-size:16px;
+        }
+        .bordura{
+            border:2px solid #d9d9d9;
+            font-size:16px;
+            padding:20px;
+        }
+        .RG{
+            height:40px;
+            width:90px;
+            border-radius:8px;
+            background-image: linear-gradient(#e6e6e6,  #b3b3b3);
+            border: none;
+            color:black;
+            font-size:16px;
+            font-weight:bold;
+            cursor: pointer;
+        }
+        #F:hover {background-image:linear-gradient(#ffe6f2,  #ff66b3);}
+        #M:hover {background-image:linear-gradient(#e6f2ff,  #1a8cff);}
+        #titlu{
+            font-size:25px;
+            padding-left:90px;
+            color: #404040;
+        }
+  .container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 20px;
+  user-select: none;
+  color:black;
+}
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #009900;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
+#comfirma{
+            padding: 15px;
+            height:50px;
+            width:300px;
+            border-radius:8px;
+            background-image: linear-gradient(#e6e6e6,  #b3b3b3);
+            border: none;
+            color:white;
+            font-size:20px;
+            font-weight:bold;
+            margin-left:90px;
+}
+#comfirma:hover {background-image:linear-gradient(#00e600,  #008000);}
+
+#close{
+    position:relative;
+    top:-335px;
+    left:110px;
+    border-radius:50%;
+    border: none;
+    padding:10px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+    margin: 4px 2px;
+    background-image:linear-gradient(#00e600,  #008000);
+}
+#close:hover {background-image:linear-gradient(#ccffcc, #00cc00);}
+
+/*FOOTER*/
+
+#footer{
+    position:fixed;
+    top:95%;
+    left:45%;
+    color:white;
+    text-align:center;
+    visibility:visible;
+}
+
+    </style>
+    <body id="fundalSite">
+        <div id="part1">
+            <img id="fundal" src="fundaluri/birou1.jpg">
+            <form id="login">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <label for="login">Log in:</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                <input id="login_username" class="textbox" type="text" name="email" placeholder="Email"/>&nbsp;&nbsp;
+                <input id="login_parola" class="textbox" type="text" name="pass" placeholder="Parola"/>&nbsp;&nbsp;&nbsp;
+                <button onclick="logare()" id="ok" >OK</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </form>
+            <div>
+                <img id="carcater3" src="caractere/Philip/P_zambet.png">
+                <img id="carcater2" src="caractere/Lucia/zambet.png">
+                <img id="carcater1" src="caractere/Armin/A_zambet.png">
+                <button id="registrare"  onclick="inregistrare()">Inregistrare</button>
+            </div>
+            <div id="notitaVerde">
+                <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+              <b> Colecteaza acte, ia decizii si creazati <br/> propria afacere.</b>
+            </div>
+            <div id="notitaAlba">
+                <br/>
+                
+                CREAZA-TI PROPRIA POVESTE <br/>
+                SI TRAIESTE VIATA CA UN INTREPRINZATOR<br/>
+                <b>TOTUL LA MY COMPANY </b>
+            </div>
+        </div>
+        <div id="formular">
+                <form >
+                <label for="titlu" id="titlu" >INREGISTREAZA-TE:</label><br/><br/><br/>
+                <input class="textbox" class="bordura" id="username" type="text" name="username" placeholder="Username"/>&nbsp;&nbsp;&nbsp;&nbsp;
+                <input class="textbox" class="bordura" id="email" type="text" name="email" placeholder="Email"/><br/><br/>
+                <input class="textbox" class="bordura" id="parola" type="text" name="pass" placeholder="Parola"/>&nbsp;&nbsp;&nbsp;&nbsp;
+                <input class="textbox" class="bordura" id="confirma" type="text" name="confimrPas" placeholder="Confirma parola"/><br/><br/>
+                Tara de origine:
+                <select id="tara">
+                  <option value="Romania">Romania</option>
+                  <option value="Franta">Franta</option>
+                  <option value="Italia">Italia</option>
+                  <option value="Spania">Spania</option>
+                  <option value="Anglia">Anglia</option>
+                  <option value="China">China</option>
+                  <option value="America">America</option>
+                  <option value="Bulgaria">Bulgaria</option>
+                  <option value="Germania">Germania</option>
+                </select>&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" name="gender" value="barbat" checked> Barbat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" name="gender" value="femeie"> Femeie<br><br><br>
+                <label class="container">Comfirm varsta si accept termenii si conditiile.
+                <input type="checkbox" id="CB"  name="radio">
+                <span class="checkmark"></span>
+                </label><br/>
+                
+                
+                <label id="comfirma" onclick="confirmareInregistrare()">Comfirmati inregistrarea</label>
+                 <!--<button id="comfirma" onclick="confirmareInregistrare()">Comfirmati inregistrarea</button>-->
+                 
+                 
+                 
+                 <button id="close">&nbsp;X&nbsp; </button>
+                 <p id="demo"></p>
+                </form>
+                
+            </div>
+        <div id="BunVenit">
+                <label id="titlu2">Bine ati venit in My Company!</label><br/><br/><br/>
+                <img id="poza" src="fundaluri/birou2.jpg"><br/><br/>
+                <p id="descriere">Bine ati venit la My Company: Inceperea unei afaceri!
+                Alaturati-va intreprinzatorilor si porniti la drum. Unele probleme iti vor solicita rabdarea si cunostintele ... 
+                Vei reusi sa treci peste? 
+                Faceti clic pe buton pentru a porni intr-o noua aventura.</p>
+                
+               <a id="btnIncepe" href="joc.html">Incepe aventura</a>
+                <br/><br/>
+            </div>
+        
+        <div id="footer">
+            2019 | MY COMPANY<br/>
+            Realizat de catre Pitis Petruta Maria.
+        </div>
+        <script  src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script type="text/javascript">
+        /*global axios*/
+        const SERVER='https://studcompany-maria400.c9users.io' 
+        
+        /*global localStorage*/
+        var username="";
+        var email="";
+        var parola="";
+        var tara="";
+        var gen="";
+        
+        var usernameLogin="";
+        var parolaLogin="";
+        
+            function inregistrare(){
+                document.getElementById("part1").style.visibility = "hidden";
+                document.getElementById("footer").style.visibility = "hidden";
+                document.getElementById("formular").style.visibility = "visible";
+            }
+            document.getElementById("ok").addEventListener("click", function(event){event.preventDefault()});
+            function logare(){
+                
+                if (document.getElementById("login_username").value) {
+                    usernameLogin = document.getElementById("login_username").value;
+                }else{
+                    alert("Completati username-ul!");
+                }
+                
+                if (document.getElementById("login_parola").value) {
+                    parolaLogin = document.getElementById("login_parola").value;
+                }else{
+                    alert("Completati parola-ul!");
+                }
+                
+                if(usernameLogin&&parolaLogin){
+                    axios.get(SERVER+"/utilizatori/"+usernameLogin).then(function (response) {
+                            alert("yoo");
+                            document.getElementById("demo").innerHTML = usernameLogin;
+                            document.getElementById("part1").style.visibility = "hidden";
+                            document.getElementById("footer").style.visibility = "hidden";
+                            document.getElementById("BunVenit").style.visibility = "visible";
+                            localStorage.setItem('username', usernameLogin);
+                            localStorage.setItem('bani', response.data.bani);
+                            localStorage.setItem('energie', response.data.energie);
+                        
+                        
+                    }).catch(function (err) {
+                    alert(err.message );
+                    });
+                }
+            }
+            
+            function confirmareInregistrare(){
+                
+                
+                if (document.getElementById("username").value) {
+                    
+                    axios.get(SERVER+"/verificare/"+document.getElementById("username").value).then(function (response) {
+                        username = document.getElementById("username").value;
+                    }).catch(function (err) {
+                    alert("Username-ul deja exista! Va rugam incercati altul.");
+                    });
+                    
+                }else{
+                    alert("Completati username-ul!");
+                }
+                
+                if (document.getElementById("email").value) {
+                        
+                    axios.get(SERVER+"/verificareMail/"+document.getElementById("email").value).then(function (response) {
+                        email = document.getElementById("email").value;
+                    }).catch(function (err) {
+                    alert("Exista deja un cont pe aceasta adresa de email.");
+                    });
+                }else{
+                    alert("Completati email-ul!");
+                }
+                if (document.getElementById("parola").value==document.getElementById("confirma").value && document.getElementById("parola").value.length>4) {
+                    parola = document.getElementById("parola").value;
+                }else if(document.getElementById("parola").value==document.getElementById("confirma").value){
+                    alert("Parola trebuie sa contina minim 5 caractere.");
+                }else{
+                    alert("Nu ati introdus aceeasi parola in ambele textbox-uri!");
+                }
+                 
+                    tara = document.getElementById("tara").value;
+                    gen = document.querySelector('input[name="gender"]:checked').value;
+                
+                if (document.getElementById("CB").checked == true){
+                
+                if(username && email && parola && tara &&gen){
+                document.getElementById("demo").innerHTML = username;
+                document.getElementById("part1").style.visibility = "hidden";
+                document.getElementById("footer").style.visibility = "hidden";
+                document.getElementById("formular").style.visibility = "hidden";
+                document.getElementById("BunVenit").style.visibility = "visible";
+                localStorage.setItem('username', username);
+                
+                axios.post(SERVER+'/users',{
+                    username:username,    
+                    email: email,
+                    parola: parola,
+                    gen:gen,
+                    tara:tara,
+                    nivel:0,
+                    bani:300,
+                    energie:100
+                }).then((response)=>{
+                    console.log("Utilizator creat");
+                }).catch(function(err){
+                    console.log(err);
+                });
+                
+                axios.post(SERVER+'/magazin',{
+                    username:username,    
+                    a1: 0,
+                    a2: 0,
+                    a3:0,
+                    a4:0,
+                    a5:0,
+                    a6:0,
+                    a7:0,
+                    a8:0,
+                    a9:0,
+                    a10:0,
+                    a11:0,
+                    a12:0
+                }).then((response)=>{
+                    console.log("Magazin inregistrat");
+                }).catch(function(err){
+                    console.log(err);
+                });
+                
+                }  
+                }else{
+                    alert("Termenii si conditiile nu sunt acceptate!");
+                }
+            }
+            
+            function start(){
+                document.getElementById("BunVenit").style.visibility = "hidden";
+            }
+        </script>
+    </body>
+</html>

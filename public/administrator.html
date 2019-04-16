@@ -1,0 +1,285 @@
+<html>
+    <head>
+        <title>My Company - administratore</title>
+    </head>
+<script type="text/javascript">
+    /*global axios*/
+    const SERVER='https://studcompany-maria400.c9users.io' 
+    /*global CanvasJS*/
+
+  window.onload = function () {
+     var romania=8; 
+      
+    // axios.get(SERVER+"/administrator.html/users/romania").then(function (response) {
+    //   romania=response.data.length;
+    // }).catch(function (err) {
+    //         alert(err.message );
+    // });
+    
+      
+    CanvasJS.addColorSet("greenShades",
+                [//colorSet Array
+
+                "#0099e6",
+                "#00b359",
+                "#ffcc66",
+                "#ff751a",
+                "#cc66ff"                
+                ]);
+      
+	var chart = new CanvasJS.Chart("chartPie",
+	{
+	    colorSet: "greenShades",
+	    backgroundColor: "transparent",
+         animationEnabled: true, 
+		title:{
+			text: ""
+		},
+		legend: {
+			maxWidth: 350,
+			itemWidth: 120,
+			fontSize: 16
+		},
+		data: [
+		{
+			type: "pie",
+			showInLegend: true,
+			toolTipContent: "{y} - #percent %",
+			legendText: "{indexLabel}",
+			dataPoints: [
+				{ y: romania, indexLabel: "Romania" },
+				{ y: 2, indexLabel: "Franta" },
+				{ y: 4, indexLabel: "Anglia" },
+				{ y: 6, indexLabel: "China"},
+				{ y: 1, indexLabel: "America" }
+			]
+		}
+		]
+	});
+	
+	    var line = new CanvasJS.Chart("chartContainer",
+    {
+        colorSet: "greenShades",
+        backgroundColor: "transparent",
+        animationEnabled: true, 
+      title:{
+        text: "",
+        fontSize: 20,
+        padding: 30
+      },
+      axisY: {
+			gridThickness: 0
+		},
+      data: [
+
+      {
+        dataPoints: [
+        { x: 1, y: 8, label: "Romania"},
+        { x: 2, y: 2,  label: "Franta" },
+        { x: 3, y: 4,  label: "Anglia"},
+        { x: 4, y: 6,  label: "China"},
+        { x: 5, y: 1,  label: "America"}
+        ]
+      }
+      ]
+    });
+
+	chart.render();
+	line.render();
+}
+  
+  </script>
+  <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script></head>
+  <style type="text/css">
+      
+    body{
+        background-image: radial-gradient(circle, #ffffff,#ffe6e6,#ffcccc);
+    }
+    #continut{
+            width: 100%;
+            height: auto;
+            margin: auto;
+            min-height: 100%;
+            position: relative;
+    }
+    #antet{
+        width: 100%;
+        height: 8%;
+        position: relative;
+        background-image: linear-gradient(to bottom right, #991f00,#cc0000, #ff471a,#ff4d4d);
+        box-shadow: 0 0 5px 0.1px hsla(0,0%,9%,.73);
+    }
+    #meniu{
+        margin-top:25px;
+            height: 84%;
+            width: 15%;
+            position: relative;
+            background-image: linear-gradient(to bottom right, #991f00,#cc0000, #ff471a,#ff4d4d);
+            box-shadow: 0 0 5px 0.1px hsla(0,0%,9%,.73);
+            float: left;
+        }
+    #info{
+        color:white;
+        font-size:20px;
+        font-weight:bold;
+        
+    }
+    #titlu{
+            position: absolute;
+             width: 650px;
+             height:200px;
+            /*margin: auto;*/
+            min-height: 100%;
+            float: left;
+            z-index: 2;
+        }
+    #detalii{
+            position: absolute;
+            z-index: 2;
+            right: 0;
+            width: 200px;
+            height: 90px;
+            padding-left: 10px;
+            padding-right: 10px;
+            text-align:center;
+            padding-top:10px;
+        }
+        #itemsContaner{
+            position:relative;
+            top:150px;
+            width:90%;
+            height:90%;
+            margin:13px;
+            
+        }
+        #item{
+            width:92.5%;
+            padding:10px;
+            font-size:21px;
+            background-image: radial-gradient(circle,#ff0000,#e60000,  #990000,#660000);
+            border-radius:8px;
+            box-shadow: 0 0 5px 0.1px hsla(0,0%,9%,.73);
+            cursor: pointer;
+            font-weight:400;
+            text-align:center;
+            margin-top:30px;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+            
+        }
+        #context{
+            position:absolute;
+            width:83%;
+            height:85%;
+            margin-left:17%;
+            margin-top:1.3%;
+        }
+        #footer{
+            position: absolute;
+            top:93%;
+            width: 100%;
+            height: 5%;
+            margin-top:40px;
+            padding: 3px;
+            text-align: center;
+            font-family: Arial,serif;
+            z-index: 9;
+            font-size: 12px;
+            background: transparent;
+            /*color:#990000;*/
+        }
+       #chartContainer{
+           position:absolute;
+           top:27%;
+           left:1%;
+       } 
+       #TitluLocatie{
+           margin-left:25%;
+           font-size:45px;
+           /*color:#2eb82e;*/
+           text-shadow: 2px 2px 4px #ffcccc;
+           font-weight:bold;
+       }
+       #descriere{
+           /*color:#2eb82e;*/
+            font-size:24px;
+            font-weight:bold;
+            margin-left:40%;
+            /*text-shadow: 2px 2px 4px #ffffb3;*/
+       }
+       #chartPie{
+           position:absolute;
+           top:21.5%;
+           left:66%;
+       }
+       #descriere1{
+           width:64%;
+           position:absolute;
+           margin-left:19px;
+           margin-top: 50px;
+           font-size: 18px;
+           text-align:center;
+       }
+       #descriere2{
+           width:28%;
+           position:absolute;
+           margin-left:70%;
+           margin-top: 36%;
+           font-size: 18px;
+           text-align:center;
+       }
+    </style>
+    <body>
+        <div id="container">
+            <div id="continut">
+                <div id="antet">
+                    
+                    <div id="titlu"></div>
+                    <div id="detalii">
+                        <span id="info">Profil Administrator <br/> Pitis Petruta Maria</span>
+                    </div>
+                </div>
+                <div id="meniu">
+                    <div id="itemsContaner">
+                        <div id="item">
+                            <a class="meniuA" href="ajutorJoc.html">
+                                        <font style="vertical-align: inherit;">Detalii generale utilizatori </font>
+                                    </a>
+                        </div>
+                        <div id="item">
+                            <a class="meniuA" href="ajutorJoc.html">
+                                        <font style="vertical-align: inherit;">Detalii provenienta utilizatori </font>
+                                    </a>
+                        </div>
+                        <div id="item">
+                            <a class="meniuA" href="ajutorJoc.html">
+                                        <font style="vertical-align: inherit;">Detalii progres utilizatori </font>
+                                    </a>
+                        </div>
+                        <div id="item">
+                            <a class="meniuA" href="ajutorJoc.html">
+                                        <font style="vertical-align: inherit;">Detalii nivel cunostine dobandite </font>
+                                    </a>
+                        </div>
+                    </div>
+                </div>
+                <div id="context">
+                    <span id="TitluLocatie">Locatia utilizatorilor (tara de provenienta)</span><br/>
+                    <p id ="descriere"> - gradul de popularitatea al jocului -</p>
+                    <p id="descriere1">Graficul pe coloane ilustreaza numarul utilizatorilor pe tari permitand o mai clara observare a si realizare a unui top cu privire la tarile une de situeaza cei mai multi jocatori.</p>
+                    <div id="chartPie" style="height: 450px; width: 33%;"></div>
+                    <p id="descriere2">Graficul placita ne ajuta sa observam mai bine cat la suta ocupa fiecare tara din totalul utilizatorilor si pe ce ramuri sa ne axam in viitor.</p>
+                    <div id="chartContainer" style="height: 590px; width: 65%;">
+                </div>
+                
+                <div id="footer">
+                      <br/> <br/>
+                       <b> My Company</b> <br/> 
+                        Pitis Petruta Maria - grupa 1066/2019
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
